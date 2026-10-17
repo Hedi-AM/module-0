@@ -1,9 +1,5 @@
 - device_type: cisco_ios
   host: sandbox-iosxe-latest-1.cisco.com
-  username: developer
+  username: admin
   password: C1sco12345
-  secret: C1sco12345
   port: 22
-  timeout: 10
-  use_keys: false
-  fast_cli: true
