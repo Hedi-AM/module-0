@@ -1,19 +1,12 @@
 import yaml
-from netmiko import (
-    ConnectHandler,
-    NetmikoAuthenticationException,
-    NetmikoTimeoutException,
-)
+from netmiko import ConnectHandler
+
 
 def send_show_command(device, command):
-    try:
-        with ConnectHandler(**device) as ssh:
-            ssh.enable()
-            return ssh.send_command(command)
-    except NetmikoAuthenticationException as error:
-        print(error)
-    except NetmikoTimeoutException as error:
-        print(error)
+    with ConnectHandler(**device) as ssh:
+        ssh.enable()
+        return ssh.send_command(command)
+
 
 if __name__ == "__main__":
     command = "sh ip int br"
